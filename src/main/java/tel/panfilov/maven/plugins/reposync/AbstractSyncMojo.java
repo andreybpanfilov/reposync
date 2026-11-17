@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -41,7 +41,6 @@ import org.apache.maven.repository.RepositorySystem;
 import org.apache.maven.repository.internal.ArtifactDescriptorReaderDelegate;
 import org.apache.maven.repository.internal.ArtifactDescriptorUtils;
 import org.apache.maven.settings.Settings;
-import org.codehaus.plexus.util.StringUtils;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.Artifact;
@@ -408,7 +407,8 @@ public abstract class AbstractSyncMojo extends AbstractMojo {
             }
 
             id = matcher.group(1).trim();
-            if (!StringUtils.isEmpty(matcher.group(2))) {
+            String layoutStr = matcher.group(2);
+            if (layoutStr != null && !layoutStr.isEmpty()) {
                 layout = getLayout(matcher.group(2).trim());
             }
             url = matcher.group(3).trim();
@@ -438,7 +438,7 @@ public abstract class AbstractSyncMojo extends AbstractMojo {
             ArtifactRepositoryPolicy updateAlways = Utils.getUpdateAlwaysPolicy();
             List<ArtifactRepository> repositories = new ArrayList<>();
             if (sourceRepositories != null) {
-                String[] repos = StringUtils.split(sourceRepositories, ",");
+                String[] repos = sourceRepositories.split(",");
                 for (String repo : repos) {
                     repositories.add(parseRepository(repo, updateAlways));
                 }

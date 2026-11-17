@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -21,7 +21,6 @@
 package tel.panfilov.maven.plugins.reposync.component;
 
 import org.codehaus.plexus.component.annotations.Component;
-import org.codehaus.plexus.util.StringUtils;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -35,7 +34,7 @@ public class DefaultScopeMediator implements ScopeMediator {
 
 
     public Set<String> negate(String scope) {
-        List<String> scopes = Arrays.asList(StringUtils.split(scope, ","));
+        List<String> scopes = Arrays.asList(scope.split(","));
         return negate(scopes);
     }
 

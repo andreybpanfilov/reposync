@@ -179,7 +179,7 @@ Example:
  -Dtransitive=true \
  -DdryRun=true \
  -DsyncSources=true \
- -DsyncJavadoc=true \
+ -DsyncJavadoc=true
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------< org.apache.maven:standalone-pom >-------------------

@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,7 +22,6 @@ package tel.panfilov.maven.plugins.reposync;
 
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Parameter;
-import org.codehaus.plexus.util.StringUtils;
 
 public abstract class AbstractCLISyncMojo extends AbstractSyncMojo {
 
@@ -65,7 +64,7 @@ public abstract class AbstractCLISyncMojo extends AbstractSyncMojo {
                     + "e.g. -Dartifact=org.apache.maven.plugins:maven-downloader-plugin:1.0");
         }
         if (artifact != null) {
-            String[] tokens = StringUtils.split(artifact, ":");
+            String[] tokens = artifact.split(":");
             if (tokens.length < 3 || tokens.length > 5) {
                 throw new MojoFailureException("Invalid artifact, you must specify "
                         + "groupId:artifactId:version[:packaging[:classifier]] " + artifact);
