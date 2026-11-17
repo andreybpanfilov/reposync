@@ -84,7 +84,7 @@
         <flatten.mode>oss</flatten.mode>
         <skip.license>false</skip.license>
         <skip.deploy>false</skip.deploy>
-        <gpg.key>A8D652210569FD553DEC2CD39F9D799F356720BB</gpg.key>
+        <gpg.key>3681C3E8D8CF927851951C962012DD757CEF1AAD</gpg.key>
     </properties>
 
     <dependencyManagement>
